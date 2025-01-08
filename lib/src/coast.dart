@@ -61,6 +61,9 @@ class CoastController {
   CoastController({int initialPage = 0}) : _pageController = PageController(initialPage: initialPage);
 
   final PageController _pageController;
+  // try not use page controller for navigation because it might break the hero animation.
+  // idk though.
+  PageController get pageController => _pageController;
 
   double? get beach => _pageController.page;
 
